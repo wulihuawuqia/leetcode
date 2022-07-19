@@ -20,33 +20,43 @@ public class ReverseList {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
-    public ListNode reverseList(ListNode head) {
-        if (null == head.next) {
+    public static ListNode reverseList(ListNode head) {
+        // 首先处理空
+        if (null == head || null == head.next) {
             return head;
         }
-        ListNode kuai;
+        // 三个引用
+        // 当前
         ListNode cur = head;
-        while (null != head.next) {
-            head = cur.next;
-            kuai = head.next.next;
+        // 头
+        head = cur.next;
+        cur.next = null;
+        // 快
+        ListNode kuai;
+        while (true) {
+            kuai = head.next;
+            head.next = cur;
             if (null == kuai) {
                 return head;
             }
-            head.next = cur;
             cur = head;
             head = kuai;
         }
-        return head;
     }
 
     public static void main(String[] args) {
         ReverseList reverseList = new ReverseList();
         ListNode head = new ListNode(1, null);
-        for (int i : new int[]{1,2,3,4,5}) {
-            head.next = new ListNode(1, null);
+        ListNode cur = head;
+        for (int i : new int[]{2}) {
+            cur.next = new ListNode(i, null);
+            cur = cur.next;
+        }
+        head = reverseList(head);
+        while(null != head) {
+            System.out.print(head.val+",");
             head = head.next;
         }
-
     }
 
 
