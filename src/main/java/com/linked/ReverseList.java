@@ -1,5 +1,8 @@
 package com.linked;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * program leetcode
  * <p>
@@ -44,6 +47,8 @@ public class ReverseList {
         }
     }
 
+
+
     public static void main(String[] args) {
         ReverseList reverseList = new ReverseList();
         ListNode head = new ListNode(1, null);
@@ -58,6 +63,8 @@ public class ReverseList {
             head = head.next;
         }
     }
+
+
 
 
 }
