@@ -13,16 +13,6 @@ import java.util.Set;
  **/
 public class ReverseList {
 
-
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
-
     public static ListNode reverseList(ListNode head) {
         // 首先处理空
         if (null == head || null == head.next) {
@@ -50,7 +40,6 @@ public class ReverseList {
 
 
     public static void main(String[] args) {
-        ReverseList reverseList = new ReverseList();
         ListNode head = new ListNode(1, null);
         ListNode cur = head;
         for (int i : new int[]{2}) {

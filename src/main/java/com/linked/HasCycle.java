@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class HasCycle {
 
-    public static boolean hasCycle(ReverseList.ListNode head) {
-        Set<ReverseList.ListNode> set = new HashSet<>();
+    public static boolean hasCycle(ListNode head) {
+        Set<ListNode> set = new HashSet<>();
         while(null != head) {
             if(!set.add(head)) {
                 return true;
@@ -16,9 +16,9 @@ public class HasCycle {
         return false;
     }
 
-    public static boolean hasCycle1(ReverseList.ListNode head) {
-        ReverseList.ListNode f = head;
-        ReverseList.ListNode s = head;
+    public static boolean hasCycle1(ListNode head) {
+        ListNode f = head;
+        ListNode s = head;
         while(null != s && null != f && null != f.next) {
             f = f.next.next;
             s = s.next;
