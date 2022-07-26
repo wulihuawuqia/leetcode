@@ -4,8 +4,15 @@ package com.linked;
 public class Merge {
 
 
-    public static ListNode merge(ListNode list1, ListNode list2) {
-        ListNode newlist1;
+    /**
+     * 合并
+     *
+     * @param list1
+     * @param list2
+     * @return {@link ListNode}
+     */
+    public static ListNode merge(ListNode<Integer> list1, ListNode<Integer> list2) {
+        ListNode<Integer> newlist1;
         if (null == list1) {
             return list2;
         }
