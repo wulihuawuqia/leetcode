@@ -1,7 +1,7 @@
 package com.stack;
 
 /**
- * @Description : TODO
+ * @Description : 栈的定义 先进后出
  * @Author : wuqia
  * @Date : 2022/7/26 09:19
  * @Version : 1.0

@@ -1,7 +1,7 @@
 package com.queue;
 
 /**
- * @Description : 队列定义
+ * @Description : 队列定义  先进，先出
  * @Author : wuqia
  * @Date : 2022/7/26 09:40
  * @Version : 1.0
