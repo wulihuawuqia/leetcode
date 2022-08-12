@@ -1,4 +1,4 @@
-package com.linked;
+package com.struct.linked;
 
 import java.util.HashSet;
 import java.util.Set;

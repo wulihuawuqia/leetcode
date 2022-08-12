@@ -1,4 +1,4 @@
-package com.stack;
+package com.struct.stack;
 
 /**
  * @Description : 顺序栈

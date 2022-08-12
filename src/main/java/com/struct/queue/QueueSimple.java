@@ -1,4 +1,4 @@
-package com.queue;
+package com.struct.queue;
 
 /**
  * @Description : 队列定义  先进，先出

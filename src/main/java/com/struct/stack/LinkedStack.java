@@ -1,6 +1,6 @@
-package com.stack;
+package com.struct.stack;
 
-import com.linked.ListNode;
+import com.struct.linked.ListNode;
 
 /**
  * @Description : 链式栈

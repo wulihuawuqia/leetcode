@@ -1,4 +1,4 @@
-package com.queue;
+package com.struct.queue;
 
 /**
  * @Description : 基于数组实现

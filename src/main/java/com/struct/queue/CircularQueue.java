@@ -1,4 +1,4 @@
-package com.queue;
+package com.struct.queue;
 
 import cn.hutool.log.StaticLog;
 

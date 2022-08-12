@@ -1,4 +1,4 @@
-package com.linked;
+package com.struct.linked;
 
 
 public class Merge {

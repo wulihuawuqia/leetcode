@@ -1,7 +1,7 @@
-package com.queue;
+package com.struct.queue;
 
 import cn.hutool.log.StaticLog;
-import com.linked.ListNode;
+import com.struct.linked.ListNode;
 
 /**
  * @Description : 链式队列
