@@ -2,6 +2,7 @@ package com.sort;
 
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.ArrayUtil;
+import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONUtil;
 import cn.hutool.log.StaticLog;
 
@@ -14,7 +15,14 @@ import java.util.Arrays;
  * @Version : 1.0
  **/
 public class SortTest {
-    public static final int[] arr = new int[]{4,5,6,3,2,1};
+    public static int[] arr = new int[]{4,5,6,3,2,1};
+
+    static {
+        arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = RandomUtil.randomInt(100);
+        }
+    }
 
     public static void main(String[] args) {
         int [] arr1 = Arrays.copyOf(arr, arr.length);
