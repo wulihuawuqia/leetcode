@@ -29,6 +29,20 @@ public class QuikSort {
         return arr;
     }
 
+    public static int finKMax(int[] arr, int left, int right, int k) {
+        if (null == arr || arr.length <= 1) {
+            return -1;
+        }
+        int center = patationg(arr, left, right);
+        if (k == center + 1) {
+            return arr[center];
+        } else if (k > center + 1) {
+            return finKMax(arr, center + 1, right, k);
+        } else {
+            return finKMax(arr, left, center - 1, k);
+        }
+    }
+
     public static int patationg(int[] arr, int left, int right) {
         // 选取中间节点
         int center = right;
@@ -53,8 +67,13 @@ public class QuikSort {
 
     public static void main(String[] args) {
         int [] arr1 = Arrays.copyOf(SortTest.arr, SortTest.arr.length);
+        int [] arr2 = Arrays.copyOf(SortTest.arr, SortTest.arr.length);
         Arrays.sort(arr1);
-        StaticLog.error("arr:{}", Arrays.toString(sort(SortTest.arr, 0, SortTest.arr.length - 1)));
+        StaticLog.error("arr:{}, 第 3 大的元素：{}",
+                Arrays.toString(sort(SortTest.arr, 0, SortTest.arr.length - 1)),
+                finKMax(arr2, 0, arr2.length - 1, 9)
+        );
+
         Assert.isTrue(ArrayUtil.equals(arr1, sort(SortTest.arr, 0, SortTest.arr.length - 1)));
     }
 }
