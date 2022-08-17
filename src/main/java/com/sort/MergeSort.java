@@ -63,6 +63,6 @@ public class MergeSort {
         int [] arr1 = Arrays.copyOf(SortTest.arr, SortTest.arr.length);
         Arrays.sort(arr1);
         StaticLog.error("arr:{}", Arrays.toString(sort(SortTest.arr, 0, SortTest.arr.length - 1)));
-        Assert.isTrue(ArrayUtil.equals(arr1, InsertSort.sort(SortTest.arr)));
+        Assert.isTrue(ArrayUtil.equals(arr1, sort(SortTest.arr, 0, SortTest.arr.length - 1)));
     }
 }
