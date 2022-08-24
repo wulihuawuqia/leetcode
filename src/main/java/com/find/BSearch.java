@@ -60,6 +60,69 @@ public class BSearch {
         return t;
     }
 
+    /**
+     * 搜索第一次大于的数
+     *
+     * @param arr 数组
+     * @param a   一个
+     * @return int
+     */
+    public static int searchFirstMoreThan(int[] arr, int a) {
+        int start = 0,
+                end = arr.length - 1;
+        while (start <= end) {
+            int mid = start + ((end - start)>>1);
+            if (arr[mid] > a) {
+                if (mid == 0 || arr[mid - 1] < a) {
+                    return mid + 1;
+                }
+                end = mid - 1;
+            } else if (arr[mid] == a){
+                while (mid < arr.length - 1) {
+                    mid ++;
+                    if (arr[mid] > a) {
+                        return mid + 1;
+                    }
+                }
+                break;
+            } else {
+                start = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 查找最后一个小于的数
+     *
+     * @param arr 数组
+     * @param a   查找值
+     * @return int
+     */
+    public static int searchLastLessThan(int[] arr, int a) {
+        int start = 0, end = arr.length - 1;
+        while (start <= end) {
+            int mid = start + ((end - start)>>1);
+            if (arr[mid] < a) {
+                if (mid == arr.length - 1 || arr[mid + 1] > a) {
+                    return mid + 1;
+                }
+                start = mid + 1;
+            } else if (arr[mid] == a){
+                while (mid > 0) {
+                    mid --;
+                    if (arr[mid] < a) {
+                        return mid + 1;
+                    }
+                }
+                break;
+            }else {
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+
     public static int search2(int[] arr, int a, int start, int end) {
         if (start > end) {
             return -1;
@@ -86,6 +149,17 @@ public class BSearch {
     @Test
     public void sqrtTest() {
         log.error("2.0:{} , Math.sqrt(2.0):{}", sqrt(4.0, 0.0001),  Math.sqrt(4.0));
+    }
+
+    @Test
+    public void firstMoreOrLessThanTest () {
+        SortTest.arr = new int[]{9, 24, 24, 35, 53, 66, 69, 76, 79, 83, 83};
+        int a = 25;
+        log.error(" 在{}中，{} firstMoreThan位于 {}, firstLessThan位于 {}",Arrays.toString(SortTest.arr), a, searchFirstMoreThan(SortTest.arr, a), searchLastLessThan(SortTest.arr, a));
+        a = 83;
+        log.error(" 在{}中，{} firstMoreThan位于 {}, firstLessThan位于 {}",Arrays.toString(SortTest.arr), a, searchFirstMoreThan(SortTest.arr, a), searchLastLessThan(SortTest.arr, a));
+        a = 9;
+        log.error(" 在{}中，{} firstMoreThan位于 {}, firstLessThan位于 {}",Arrays.toString(SortTest.arr), a, searchFirstMoreThan(SortTest.arr, a), searchLastLessThan(SortTest.arr, a));
     }
 
     @Test
