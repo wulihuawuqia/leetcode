@@ -1,13 +1,14 @@
-package com.sort;
+package com.sort.base;
 
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.log.StaticLog;
+import com.sort.SortTest;
 
 import java.util.Arrays;
 
 /**
- * @Description : TODO
+ * @Description : 选择排序：确定已排序区，然后遍历未排序区，每次选择最小的元素放到已排序区的最后
  * @Author : wuqia
  * @Date : 2022/8/12 09:06
  * @Version : 1.0

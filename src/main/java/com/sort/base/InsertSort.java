@@ -1,13 +1,14 @@
-package com.sort;
+package com.sort.base;
 
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.log.StaticLog;
+import com.sort.SortTest;
 
 import java.util.Arrays;
 
 /**
- * @Description : TODO
+ * @Description : 插入排序：确认已排序区，每次选取一个未排序区元素，从后往前和已排序区元素对比，如果未排元素小于已排元素，则将已排元素后移，将未排元素插入
  * @Author : wuqia
  * @Date : 2022/8/10 10:14
  * @Version : 1.0

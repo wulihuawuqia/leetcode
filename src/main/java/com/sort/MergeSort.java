@@ -9,8 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Arrays;
 
 /**
- * @Description : 归并排序
- * 先分堆，然后进行合并。整个过程递归
+ * @Description : 归并排序：先分堆，然后进行合并。整个过程递归
  * @Author : wuqia
  * @Date : 2022/8/16 09:09
  * @Version : 1.0

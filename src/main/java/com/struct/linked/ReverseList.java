@@ -39,7 +39,7 @@ public class ReverseList {
     public static void main(String[] args) {
         ListNode head = new ListNode(1, null);
         ListNode cur = head;
-        for (int i : new int[]{2}) {
+        for (int i : new int[]{2,3,4,6}) {
             cur.next = new ListNode(i, null);
             cur = cur.next;
         }

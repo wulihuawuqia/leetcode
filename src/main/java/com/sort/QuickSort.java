@@ -14,7 +14,7 @@ import java.util.Arrays;
  * @Date : 2022/8/17 09:01
  * @Version : 1.0
  **/
-public class QuikSort {
+public class QuickSort {
 
     public static int[] sort(int[] arr, int left, int right) {
         if (null == arr || arr.length <= 1) {

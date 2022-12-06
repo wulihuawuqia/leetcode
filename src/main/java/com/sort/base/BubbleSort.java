@@ -1,4 +1,4 @@
-package com.sort;
+package com.sort.base;
 
 /**
  * @Description : 冒泡排序

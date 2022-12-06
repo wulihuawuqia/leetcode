@@ -45,7 +45,7 @@ public class CountingSort {
     }
     /*
     10:59:12.555 [main] ERROR com.sort.BucketSort - 1000000条 普通排序耗时：32毫秒
-    10:59:12.560 [main] ERROR com.sort.BucketSort - 1000000条 桶排序耗时：3毫秒
+    10:59:12.560 [main] ERROR com.sort.BucketSort - 1000000条 计数排序耗时：3毫秒
 
     */
     public static void main(String[] args) {
