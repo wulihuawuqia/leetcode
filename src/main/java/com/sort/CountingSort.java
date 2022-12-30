@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @Description : 计数排序
+ * @Description : 计数排序, 适合重复数据多的情况
  * @Author : wuqia
  * @Date : 2022/8/18 11:38
  * @Version : 1.0

@@ -8,7 +8,7 @@ import com.sort.SortTest;
 import java.util.Arrays;
 
 /**
- * @Description : 选择排序：确定已排序区，然后遍历未排序区，每次选择最小的元素放到已排序区的最后
+ * @Description : 选择排序：确定已排序区，然后遍历未排序区，每次选择未排序区最小的元素放到已排序区的最后
  * @Author : wuqia
  * @Date : 2022/8/12 09:06
  * @Version : 1.0
