@@ -2,6 +2,11 @@ package com.struct.tree;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * @Description : 二叉查找树
  * @Author : wuqia
@@ -122,11 +127,53 @@ public class BinarySearchTree {
         print(p);
     }
 
+    /**
+     * 打印 中序遍历
+     *
+     * @param node 节点
+     */
     public void print(Node node) {
         if (null != node) {
             print(node.left);
             System.out.print(node.value + ",");
             print(node.right);
+        }
+    }
+
+    public void printLayer() {
+        // 暂存数据
+        List<Node> list = new ArrayList<>();
+        list.add(tree);
+        while (!list.isEmpty()) {
+            // 输出本层，如果这层数据有子节点，则把节点存入list
+            List<Node> temp = new ArrayList<>();
+            for (Node node1 : list) {
+                System.out.print(node1.value + " ");
+                if (null != node1.left) {
+                    temp.add(node1.left);
+                }
+                if (null != node1.right) {
+                    temp.add(node1.right);
+                }
+            }
+            System.out.println();
+            list = temp;
+        }
+    }
+
+    public void printLayer1() {
+        // 暂存数据
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(tree);
+        while (!queue.isEmpty()) {
+            Node node1 = queue.poll();
+            System.out.print(node1.value + " ");
+            if (null != node1.left) {
+                queue.add(node1.left);
+            }
+            if (null != node1.right) {
+                queue.add(node1.right);
+            }
         }
     }
 
@@ -157,6 +204,8 @@ public class BinarySearchTree {
         binarySearchTree.insert(19);
         binarySearchTree.insert(27);
         binarySearchTree.insert(55);
+        binarySearchTree.printLayer();
+        binarySearchTree.printLayer1();
         binarySearchTree.print();
         System.out.println(binarySearchTree.find(55));
         System.out.println(binarySearchTree.find(54));
