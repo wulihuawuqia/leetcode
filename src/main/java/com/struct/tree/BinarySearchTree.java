@@ -15,26 +15,26 @@ import java.util.Queue;
  **/
 public class BinarySearchTree {
 
-    public Node tree;
+    public TreeNode tree;
 
 
     public void insert(int val) {
         if (null == tree) {
-            tree = new Node(val);
+            tree = new TreeNode(val);
             return;
         }
-        Node p = tree;
+        TreeNode p = tree;
         while (null != p) {
-            if (val > p.getValue()) {
+            if (val > p.getVal()) {
                 if (null == p.right) {
-                    p.right = new Node(val);
+                    p.right = new TreeNode(val);
                     return;
                 } else {
                     p = p.right;
                 }
             } else {
                 if (null == p.left) {
-                    p.left = new Node(val);
+                    p.left = new TreeNode(val);
                     return;
                 } else {
                     p = p.left;
@@ -48,13 +48,13 @@ public class BinarySearchTree {
         if (null == tree) {
             return;
         }
-        Node p = tree;
-        Node fp = tree;
+        TreeNode p = tree;
+        TreeNode fp = tree;
         boolean isLeft = Boolean.TRUE;
         while (null != p) {
-            if (p.value == val) {
+            if (p.val == val) {
                 break;
-            } else if (p.value > val) {
+            } else if (p.val > val) {
                 fp = p;
                 p = p.left;
             } else {
@@ -70,16 +70,16 @@ public class BinarySearchTree {
         // 如果没有子节点直接删除
         if (null != p.left && null != p.right) {
             // 如果有两个子节点，则找右子树的最小节点，替换原有节点，然后删除最小节点的关系
-            Node min = p.right;
-            Node minFather = p;
+            TreeNode min = p.right;
+            TreeNode minFather = p;
             while (null != min.left) {
                 minFather = min;
                 min = min.left;
             }
             if (isLeft) {
-                fp.left.setValue(min.getValue());
+                fp.left.setVal(min.getVal());
             } else {
-                fp.right.setValue(min.getValue());
+                fp.right.setVal(min.getVal());
             }
             minFather.left = null;
         } else if (null != p.right) {
@@ -96,7 +96,7 @@ public class BinarySearchTree {
                 fp.right = p.left;
             }
         } else {
-            if (val > fp.getValue()) {
+            if (val > fp.getVal()) {
                 fp.right = null;
             } else {
                 fp.left = null;
@@ -105,15 +105,15 @@ public class BinarySearchTree {
 
     }
 
-    public Node find (int val) {
+    public TreeNode find (int val) {
         if (null == tree) {
             return null;
         }
-        Node p = tree;
+        TreeNode p = tree;
         while (null != p) {
-            if (p.value == val) {
+            if (p.val == val) {
                 return p;
-            } else if (p.value > val) {
+            } else if (p.val > val) {
                 p = p.left;
             } else {
                 p = p.right;
@@ -123,37 +123,37 @@ public class BinarySearchTree {
     }
 
     public void print () {
-        Node p = tree;
+        TreeNode p = tree;
         print(p);
     }
 
     /**
      * 打印 中序遍历
      *
-     * @param node 节点
+     * @param treeNode 节点
      */
-    public void print(Node node) {
-        if (null != node) {
-            print(node.left);
-            System.out.print(node.value + ",");
-            print(node.right);
+    public void print(TreeNode treeNode) {
+        if (null != treeNode) {
+            print(treeNode.left);
+            System.out.print(treeNode.val + ",");
+            print(treeNode.right);
         }
     }
 
     public void printLayer() {
         // 暂存数据
-        List<Node> list = new ArrayList<>();
+        List<TreeNode> list = new ArrayList<>();
         list.add(tree);
         while (!list.isEmpty()) {
             // 输出本层，如果这层数据有子节点，则把节点存入list
-            List<Node> temp = new ArrayList<>();
-            for (Node node1 : list) {
-                System.out.print(node1.value + " ");
-                if (null != node1.left) {
-                    temp.add(node1.left);
+            List<TreeNode> temp = new ArrayList<>();
+            for (TreeNode treeNode1 : list) {
+                System.out.print(treeNode1.val + " ");
+                if (null != treeNode1.left) {
+                    temp.add(treeNode1.left);
                 }
-                if (null != node1.right) {
-                    temp.add(node1.right);
+                if (null != treeNode1.right) {
+                    temp.add(treeNode1.right);
                 }
             }
             System.out.println();
@@ -163,27 +163,27 @@ public class BinarySearchTree {
 
     public void printLayer1() {
         // 暂存数据
-        Queue<Node> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(tree);
         while (!queue.isEmpty()) {
-            Node node1 = queue.poll();
-            System.out.print(node1.value + " ");
-            if (null != node1.left) {
-                queue.add(node1.left);
+            TreeNode treeNode1 = queue.poll();
+            System.out.print(treeNode1.val + " ");
+            if (null != treeNode1.left) {
+                queue.add(treeNode1.left);
             }
-            if (null != node1.right) {
-                queue.add(node1.right);
+            if (null != treeNode1.right) {
+                queue.add(treeNode1.right);
             }
         }
     }
 
     @Data
-    class Node {
-        private Node left;
-        private Node right;
-        private int value;
-        public Node(int value) {
-            this.value = value;
+    public static class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+        public TreeNode(int val) {
+            this.val = val;
         }
     }
 
